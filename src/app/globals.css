@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rg-slate: #1a1a1a;
+  --color-rg-gold: #b38b3a;
+  --color-rg-bone: #ffffff;
+  --color-rg-light: #f7f6f1;
+  --color-rg-teak: #4f4031;
+  
+  --font-sans: var(--font-inter), sans-serif;
+  --font-display: var(--font-cinzel), serif;
+}
+
+@layer base {
+  * {
+    @apply border-rg-slate/20;
+  }
+  
+  body {
+    @apply bg-rg-bone text-rg-slate antialiased font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+/* GSAP Smooth Scrolling (Lenis) recommended reset */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
