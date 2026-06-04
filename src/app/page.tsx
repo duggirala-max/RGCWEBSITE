@@ -58,14 +58,7 @@ export default function Home() {
                   >
                     We build ambient living spaces for families.
                   </motion.p>
-                  <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
-                    <Link
-                      href="/about"
-                      className="inline-block bg-white text-rg-slate px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-rg-gold hover:text-white transition-colors"
-                    >
-                      Discover RG Constructions
-                    </Link>
-                  </motion.div>
+
                 </div>
               </div>
             </div>
@@ -179,6 +172,42 @@ export default function Home() {
                 We understand the importance of delivering projects on time. With a proven track record, we have established ourselves as a reliable construction company, ensuring client expectations are consistently met.
               </p>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-24 px-6 lg:px-24 bg-rg-light">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <span className="text-rg-gold tracking-widest uppercase text-sm font-bold mb-4 block">Our Portfolio</span>
+            <h2 className="text-4xl lg:text-5xl font-display text-rg-slate">Featured Projects</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Link href="/projects" target="_blank" rel="noopener noreferrer" className="group block">
+              <div className="bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                <div className="relative h-64 w-full overflow-hidden">
+                  <Image
+                    src="/assets/project_image_2.jpeg"
+                    alt="Euphoria Project"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 text-xs font-bold tracking-widest uppercase text-rg-slate">
+                    Nearing Possession
+                  </div>
+                </div>
+                <div className="p-8 border border-t-0 border-rg-slate/10">
+                  <h3 className="text-2xl font-display text-rg-slate mb-2 group-hover:text-rg-gold transition-colors">Euphoria</h3>
+                  <p className="text-rg-slate/70 font-sans mb-4">Kondapaneni Township, Mangalagiri</p>
+                  <div className="flex items-center justify-between text-sm font-bold text-rg-slate uppercase tracking-widest">
+                    <span>Explore Project</span>
+                    <span className="text-rg-gold">→</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>

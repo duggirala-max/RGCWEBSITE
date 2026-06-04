@@ -41,13 +41,13 @@ export function Navigation() {
         {/* Desktop Menu */}
         <nav className="hidden lg:flex items-center gap-10">
           <Link
-            href="/about"
+            href="/"
             className="text-sm font-semibold text-rg-slate uppercase tracking-widest hover:text-rg-gold transition-colors"
           >
-            About Us
+            Home
           </Link>
           <Link
-            href="/projects"
+            href="/#projects"
             className="text-sm font-semibold text-rg-slate uppercase tracking-widest hover:text-rg-gold transition-colors"
           >
             Projects
@@ -59,7 +59,9 @@ export function Navigation() {
             Corporate
           </Link>
           <a
-            href="#contact"
+            href="https://wa.me/919488149966"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-bold bg-rg-slate text-white px-6 py-3 uppercase tracking-widest hover:bg-rg-gold transition-colors"
           >
             Contact
@@ -82,14 +84,14 @@ export function Navigation() {
         }`}
       >
         <Link
-          href="/about"
+          href="/"
           onClick={() => setMobileMenuOpen(false)}
           className="text-2xl font-display text-rg-slate hover:text-rg-gold transition-colors"
         >
-          About Us
+          Home
         </Link>
         <Link
-          href="/projects"
+          href="/#projects"
           onClick={() => setMobileMenuOpen(false)}
           className="text-2xl font-display text-rg-slate hover:text-rg-gold transition-colors"
         >
