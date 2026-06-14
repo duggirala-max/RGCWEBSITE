@@ -154,7 +154,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Link href="/projects/euphoria" className="group block">
+            <Link href="/Euphoria" className="group block">
               <div className="bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
                 <div className="relative aspect-video w-full overflow-hidden">
                   <Image
