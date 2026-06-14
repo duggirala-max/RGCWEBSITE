@@ -234,7 +234,7 @@ export default function HeroSection() {
             variants={fadeInUp}
           >
             <Link
-              href="/projects"
+              href="/#projects"
               className="inline-block border border-white/30 bg-black/20 backdrop-blur-sm text-white text-xs md:text-sm font-semibold uppercase tracking-[0.25em] px-8 py-3 md:px-10 md:py-4 hover:bg-rg-gold hover:border-rg-gold hover:text-white transition-all duration-500"
             >
               View Projects
