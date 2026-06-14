@@ -17,6 +17,14 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleHomeClick = (e: React.MouseEvent) => {
+    if (window.location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -25,7 +33,7 @@ export function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="relative z-50 flex items-center">
+        <Link href="/" onClick={handleHomeClick} className="relative z-50 flex items-center">
           <div className="relative h-12 w-48 lg:h-14 lg:w-56">
             <Image
               src="/logo.svg"
@@ -42,6 +50,7 @@ export function Navigation() {
         <nav className="hidden lg:flex items-center gap-10">
           <Link
             href="/"
+            onClick={handleHomeClick}
             className="text-sm font-semibold text-rg-slate uppercase tracking-widest hover:text-rg-gold transition-colors"
           >
             Home
@@ -85,7 +94,7 @@ export function Navigation() {
       >
         <Link
           href="/"
-          onClick={() => setMobileMenuOpen(false)}
+          onClick={handleHomeClick}
           className="text-2xl font-display text-rg-slate hover:text-rg-gold transition-colors"
         >
           Home

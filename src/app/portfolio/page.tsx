@@ -9,24 +9,24 @@ export const metadata: Metadata = {
 
 export default function PortfolioPage() {
   return (
-    <main className="flex-1 w-full min-h-screen bg-rg-bone text-rg-slate pt-32 px-6 lg:px-24">
+    <main className="flex-1 w-full min-h-screen pt-32 px-6 lg:px-24 pb-24">
       <Link href="/" className="inline-flex items-center gap-2 text-rg-slate/70 hover:text-rg-gold mb-12 transition-colors">
         <ArrowLeft className="w-4 h-4" /> Back to Home
       </Link>
-      <h1 className="text-5xl lg:text-7xl font-display uppercase font-bold tracking-tight mb-8">Property Portfolio</h1>
-      <p className="font-sans text-xl max-w-2xl text-rg-slate/80">
-        Our curated collection of high-end residential, commercial, and master-planned communities.
+      <h1 className="text-5xl lg:text-7xl uppercase font-bold tracking-tight mb-8">Property Portfolio</h1>
+      <p className="text-xl max-w-2xl text-rg-slate/80">
+        An archive of our completed residential and commercial developments.
       </p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
         {/* Placeholder for projects */}
-        <div className="h-96 bg-rg-slate/5 border border-rg-slate/20 flex flex-col justify-end p-8 hover:bg-white transition-colors duration-500">
+        <div className="aspect-[3/4] bg-rg-slate/5 border border-rg-slate/20 flex flex-col justify-end p-8 hover:bg-white transition-colors duration-500">
           <span className="text-sm font-bold tracking-widest uppercase text-rg-gold mb-2">Residential</span>
-          <h3 className="text-2xl font-display">Euphoria Heights</h3>
+          <h3 className="text-2xl">Euphoria Heights</h3>
         </div>
-        <div className="h-96 bg-rg-slate/5 border border-rg-slate/20 flex flex-col justify-end p-8 hover:bg-white transition-colors duration-500">
+        <div className="aspect-[3/4] bg-rg-slate/5 border border-rg-slate/20 flex flex-col justify-end p-8 hover:bg-white transition-colors duration-500">
           <span className="text-sm font-bold tracking-widest uppercase text-rg-gold mb-2">Commercial</span>
-          <h3 className="text-2xl font-display">Noor Al Reef</h3>
+          <h3 className="text-2xl">Noor Al Reef</h3>
         </div>
       </div>
     </main>

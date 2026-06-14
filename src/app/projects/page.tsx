@@ -8,11 +8,13 @@ import {
   Car,
   PhoneCall,
   Zap,
-  Leaf,
   Shield,
   Sun,
-  Activity,
   Trees,
+  Users,
+  Dumbbell,
+  Trophy,
+  Battery
 } from "lucide-react";
 
 export default function EuphoriaProjectPage() {
@@ -22,13 +24,13 @@ export default function EuphoriaProjectPage() {
   };
 
   const amenities = [
-    { name: "Multipurpose Hall", icon: <Activity className="w-6 h-6 text-rg-gold" /> },
-    { name: "Gym", icon: <Activity className="w-6 h-6 text-rg-gold" /> },
-    { name: "Table Tennis", icon: <Activity className="w-6 h-6 text-rg-gold" /> },
+    { name: "Multipurpose Hall", icon: <Users className="w-6 h-6 text-rg-gold" /> },
+    { name: "Gym", icon: <Dumbbell className="w-6 h-6 text-rg-gold" /> },
+    { name: "Table Tennis", icon: <Trophy className="w-6 h-6 text-rg-gold" /> },
     { name: "Ample Car Parking", icon: <Car className="w-6 h-6 text-rg-gold" /> },
     { name: "Intercom Facility", icon: <PhoneCall className="w-6 h-6 text-rg-gold" /> },
     { name: "Power Backup", icon: <Zap className="w-6 h-6 text-rg-gold" /> },
-    { name: "Invertor/Generator", icon: <Zap className="w-6 h-6 text-rg-gold" /> },
+    { name: "Invertor/Generator", icon: <Battery className="w-6 h-6 text-rg-gold" /> },
     { name: "Exquisite Landscaping", icon: <Trees className="w-6 h-6 text-rg-gold" /> },
     { name: "Round the Clock Security", icon: <Shield className="w-6 h-6 text-rg-gold" /> },
     { name: "Solar Power Backup", icon: <Sun className="w-6 h-6 text-rg-gold" /> },
@@ -57,13 +59,13 @@ export default function EuphoriaProjectPage() {
   return (
     <main className="w-full min-h-screen bg-rg-light pb-24">
       {/* 1. Hero Section */}
-      <section className="relative w-full h-[70vh] md:h-[80vh] flex items-center justify-center pt-20">
+      <section className="relative w-full h-[80vh] flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image
             src="/assets/project_image_2.jpeg"
             alt="Euphoria Project Hero"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
           />
           <div className="absolute inset-0 bg-black/50" />
@@ -73,7 +75,7 @@ export default function EuphoriaProjectPage() {
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="text-6xl md:text-8xl font-display font-bold text-white mb-6 tracking-wide"
+            className="text-6xl md:text-8xl font-bold text-white mb-6 tracking-wide"
           >
             EUPHORIA
           </motion.h1>
@@ -81,9 +83,9 @@ export default function EuphoriaProjectPage() {
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="text-xl md:text-3xl text-rg-gold font-sans uppercase tracking-widest mb-10"
+            className="text-xl md:text-3xl text-rg-gold uppercase tracking-widest mb-10"
           >
-            Where Luxury Meets Lifestyle
+            Mangalagiri, Defined.
           </motion.p>
             <a
               href="https://wa.me/919488149966"
@@ -108,20 +110,20 @@ export default function EuphoriaProjectPage() {
           >
             <div>
               <span className="text-rg-gold tracking-widest uppercase text-sm font-bold mb-4 block">About The Project</span>
-              <h2 className="text-4xl lg:text-5xl font-display text-rg-slate mb-6">Boutique Living Experience</h2>
-              <p className="text-lg text-rg-slate/70 font-sans leading-relaxed mb-6">
-                Established by <strong>RG Constructions</strong>, Euphoria is a prestigious new development consisting of <strong>116 luxury flats</strong>. We strive to provide our customers from different backgrounds an experience of luxury that will no longer be a dream.
+              <h2 className="text-4xl lg:text-5xl text-rg-slate mb-6">A Private Reserve.</h2>
+              <p className="text-lg text-rg-slate/70 leading-relaxed mb-6">
+                Euphoria is a collection of <strong>116 private residences</strong> in Kondapaneni Township. Designed strictly for privacy and space, it provides a quiet retreat within the city limits.
               </p>
-              <p className="text-lg text-rg-slate/70 font-sans leading-relaxed">
-                Located perfectly at Kondapaneni Township, Near Tenali Flyover, Off National Highways, Mangalagiri, Euphoria seamlessly balances tranquility with excellent urban connectivity.
+              <p className="text-lg text-rg-slate/70 leading-relaxed">
+                Situated just off the NH16 Expressway, Euphoria provides immediate access to the capital district while maintaining strict perimeter privacy.
               </p>
             </div>
-            <div className="relative h-96 w-full">
+            <div className="relative aspect-[4/3] w-full">
               <Image
                 src="/assets/project_image_2.jpeg"
                 alt="Euphoria Project View"
                 fill
-                className="object-cover rounded-sm shadow-xl"
+                className="object-cover object-center rounded-sm shadow-xl"
               />
             </div>
           </motion.div>
@@ -137,7 +139,7 @@ export default function EuphoriaProjectPage() {
             className="text-center mb-16"
           >
             <span className="text-rg-gold tracking-widest uppercase text-sm font-bold mb-4 block">Floor Plans</span>
-            <h2 className="text-4xl lg:text-5xl font-display text-rg-slate">Stunning Configurations</h2>
+            <h2 className="text-4xl lg:text-5xl text-rg-slate">Stunning Configurations</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -152,12 +154,12 @@ export default function EuphoriaProjectPage() {
               <div className="p-8 lg:p-12">
                 <div className="flex justify-between items-end mb-6">
                   <div>
-                    <h3 className="text-3xl font-display text-rg-slate">3 BHK</h3>
-                    <p className="text-rg-slate/60 font-sans uppercase tracking-widest text-sm mt-1">Nearing Possession</p>
+                    <h3 className="text-3xl text-rg-slate">3 BHK</h3>
+                    <p className="text-rg-slate/60 uppercase tracking-widest text-sm mt-1">Nearing Possession</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-4xl font-display text-rg-gold">1939</p>
-                    <p className="text-rg-slate/60 font-sans text-sm">Sq.ft</p>
+                    <p className="text-4xl text-rg-gold">1939</p>
+                    <p className="text-rg-slate/60 text-sm">Sq.ft</p>
                   </div>
                 </div>
                 <div className="flex gap-6 border-y border-rg-slate/10 py-6 mb-8">
@@ -170,7 +172,7 @@ export default function EuphoriaProjectPage() {
                     <span className="text-sm text-rg-slate/60 uppercase tracking-widest">Baths</span>
                   </div>
                 </div>
-                <p className="text-rg-slate/80 font-sans">Available in East & West Facing configurations.</p>
+                <p className="text-rg-slate/80">Available in East & West Facing configurations.</p>
                 <a 
                   href="https://wa.me/919488149966"
                   target="_blank"
@@ -193,12 +195,12 @@ export default function EuphoriaProjectPage() {
               <div className="p-8 lg:p-12">
                 <div className="flex justify-between items-end mb-6">
                   <div>
-                    <h3 className="text-3xl font-display text-rg-slate">2 BHK</h3>
-                    <p className="text-rg-slate/60 font-sans uppercase tracking-widest text-sm mt-1">Nearing Possession</p>
+                    <h3 className="text-3xl text-rg-slate">2 BHK</h3>
+                    <p className="text-rg-slate/60 uppercase tracking-widest text-sm mt-1">Nearing Possession</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-4xl font-display text-rg-gold">1368</p>
-                    <p className="text-rg-slate/60 font-sans text-sm">Sq.ft</p>
+                    <p className="text-4xl text-rg-gold">1368</p>
+                    <p className="text-rg-slate/60 text-sm">Sq.ft</p>
                   </div>
                 </div>
                 <div className="flex gap-6 border-y border-rg-slate/10 py-6 mb-8">
@@ -211,7 +213,7 @@ export default function EuphoriaProjectPage() {
                     <span className="text-sm text-rg-slate/60 uppercase tracking-widest">Baths</span>
                   </div>
                 </div>
-                <p className="text-rg-slate/80 font-sans">Available in East & West Facing configurations.</p>
+                <p className="text-rg-slate/80">Available in East & West Facing configurations.</p>
                 <a 
                   href="https://wa.me/919488149966"
                   target="_blank"
@@ -234,8 +236,8 @@ export default function EuphoriaProjectPage() {
             variants={fadeInUp}
             className="text-center mb-16"
           >
-            <span className="text-rg-gold tracking-widest uppercase text-sm font-bold mb-4 block">Premium Lifestyle</span>
-            <h2 className="text-4xl lg:text-5xl font-display text-rg-slate">World Class Amenities</h2>
+            <span className="text-rg-gold tracking-widest uppercase text-sm font-bold mb-4 block">The Amenities</span>
+            <h2 className="text-4xl lg:text-5xl text-rg-slate">Designed for Leisure</h2>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
@@ -254,7 +256,7 @@ export default function EuphoriaProjectPage() {
                 <div className="w-16 h-16 rounded-full bg-rg-light flex items-center justify-center">
                   {amenity.icon}
                 </div>
-                <h4 className="font-bold text-rg-slate font-sans text-sm">{amenity.name}</h4>
+                <h4 className="font-bold text-rg-slate text-sm">{amenity.name}</h4>
               </motion.div>
             ))}
           </div>
@@ -270,7 +272,7 @@ export default function EuphoriaProjectPage() {
             className="mb-16"
           >
             <span className="text-rg-gold tracking-widest uppercase text-sm font-bold mb-4 block">Project Details</span>
-            <h2 className="text-4xl lg:text-5xl font-display text-rg-slate">Specifications</h2>
+            <h2 className="text-4xl lg:text-5xl text-rg-slate">Specifications</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
@@ -286,7 +288,7 @@ export default function EuphoriaProjectPage() {
                 <CheckCircle2 className="w-6 h-6 text-rg-gold flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-bold text-rg-slate text-lg mb-2">{spec.category}</h4>
-                  <p className="text-rg-slate/70 font-sans text-sm leading-relaxed">{spec.description}</p>
+                  <p className="text-rg-slate/70 text-sm leading-relaxed">{spec.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -304,12 +306,12 @@ export default function EuphoriaProjectPage() {
           >
             <div className="lg:col-span-1">
               <span className="text-rg-gold tracking-widest uppercase text-sm font-bold mb-4 block">Advantages</span>
-              <h2 className="text-4xl lg:text-5xl font-display text-rg-slate mb-6">Location Highlights</h2>
-              <p className="text-rg-slate/70 font-sans mb-8">
+              <h2 className="text-4xl lg:text-5xl text-rg-slate mb-6">Location Highlights</h2>
+              <p className="text-rg-slate/70 mb-8">
                 Nestled in the emerging Kondapaneni Township, Euphoria is strategically located offering quick access to major hubs, hospitals, and educational institutions.
               </p>
               <div className="bg-white p-6 border border-rg-slate/10 border-l-4 border-l-rg-gold">
-                <p className="font-bold text-rg-slate font-sans">Mangalagiri, Near Tenali Flyover</p>
+                <p className="font-bold text-rg-slate">Mangalagiri, Near Tenali Flyover</p>
               </div>
             </div>
             
@@ -327,7 +329,7 @@ export default function EuphoriaProjectPage() {
                   className="flex items-start gap-4 p-6 bg-white border border-rg-slate/5 shadow-sm hover:shadow-md transition-shadow"
                 >
                   <MapPin className="w-6 h-6 text-rg-gold flex-shrink-0" />
-                  <p className="text-rg-slate/80 font-sans text-sm leading-relaxed">{highlight}</p>
+                  <p className="text-rg-slate/80 text-sm leading-relaxed">{highlight}</p>
                 </motion.div>
               ))}
             </div>

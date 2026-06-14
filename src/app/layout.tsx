@@ -15,6 +15,7 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://rgconstructions.in"),
   title: {
     default: "RG Constructions | Premium Real Estate & Commercial Development",
     template: "%s | RG Constructions",
@@ -50,6 +51,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${cinzel.variable} h-full antialiased scroll-smooth`}
+      data-scroll-behavior="smooth"
     >
       <body className="min-h-full flex flex-col bg-rg-light text-rg-slate selection:bg-rg-gold selection:text-white">
         <SmoothScrollProvider>
