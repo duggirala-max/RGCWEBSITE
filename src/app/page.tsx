@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination, Navigation } from "swiper/modules";
 import CountUp from "react-countup";
 import { motion, Variants } from "framer-motion";
+import HeroSection from "../components/HeroSection";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -31,50 +32,8 @@ export default function Home() {
 
   return (
     <main className="w-full min-h-screen bg-rg-light">
-      {/* Hero Swiper Section */}
-      <section className="relative h-screen w-full">
-        <Swiper
-          modules={[Autoplay, EffectFade, Pagination, Navigation]}
-          effect="fade"
-          speed={1500}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          pagination={{ clickable: true }}
-          navigation
-          className="w-full h-full absolute inset-0"
-        >
-          <SwiperSlide>
-            <div className="relative w-full h-full">
-              <Image
-                src="/assets/project_image_2.jpeg"
-                alt="Euphoria Project"
-                fill
-                className="object-cover object-center"
-                priority
-              />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                <div className="text-center text-white px-6">
-                  <motion.h1
-                    initial="hidden"
-                    animate="visible"
-                    variants={fadeInUp}
-                    className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase mb-4"
-                  >
-                    Enduring <span className="text-rg-gold">Structures.</span>
-                  </motion.h1>
-                  <motion.p
-                    initial="hidden"
-                    animate="visible"
-                    variants={fadeInUp}
-                    className="text-lg md:text-2xl mb-8 max-w-2xl mx-auto"
-                  >
-                    Developing India's most sought-after properties.
-                  </motion.p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
-      </section>
+      {/* Cinematic Hero */}
+      <HeroSection />
 
       {/* Intro & Statistics Section */}
       <section className="py-24 px-6 lg:px-24 bg-rg-light">

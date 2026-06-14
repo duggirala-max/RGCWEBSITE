@@ -27,20 +27,22 @@ export function Navigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-sm py-4" : "bg-white/95 py-6"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-white shadow-sm py-4"
+          : "bg-transparent py-6"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" onClick={handleHomeClick} className="relative z-50 flex items-center">
-          <div className="relative h-12 w-48 lg:h-14 lg:w-56">
+          <div className="relative h-16 w-24 lg:h-20 lg:w-32 transition-all duration-500">
             <Image
-              src="/logo.svg"
+              src="/Logo-Transparent.png"
               alt="RG Constructions Logo"
               fill
-              className="object-contain object-left"
-              sizes="(max-width: 768px) 192px, 224px"
+              className="object-contain object-left transition-opacity duration-500"
+              sizes="(max-width: 768px) 96px, 128px"
               priority
             />
           </div>
@@ -51,19 +53,31 @@ export function Navigation() {
           <Link
             href="/"
             onClick={handleHomeClick}
-            className="text-sm font-semibold text-rg-slate uppercase tracking-widest hover:text-rg-gold transition-colors"
+            className={`text-sm font-semibold uppercase tracking-widest transition-colors ${
+              isScrolled
+                ? "text-rg-slate hover:text-rg-gold"
+                : "text-white/90 hover:text-rg-gold"
+            }`}
           >
             Home
           </Link>
           <Link
             href="/#projects"
-            className="text-sm font-semibold text-rg-slate uppercase tracking-widest hover:text-rg-gold transition-colors"
+            className={`text-sm font-semibold uppercase tracking-widest transition-colors ${
+              isScrolled
+                ? "text-rg-slate hover:text-rg-gold"
+                : "text-white/90 hover:text-rg-gold"
+            }`}
           >
             Projects
           </Link>
           <Link
             href="/corporate"
-            className="text-sm font-semibold text-rg-slate uppercase tracking-widest hover:text-rg-gold transition-colors"
+            className={`text-sm font-semibold uppercase tracking-widest transition-colors ${
+              isScrolled
+                ? "text-rg-slate hover:text-rg-gold"
+                : "text-white/90 hover:text-rg-gold"
+            }`}
           >
             Corporate
           </Link>
@@ -71,7 +85,11 @@ export function Navigation() {
             href="https://wa.me/919488149966"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-bold bg-rg-slate text-white px-6 py-3 uppercase tracking-widest hover:bg-rg-gold transition-colors"
+            className={`text-sm font-bold px-6 py-3 uppercase tracking-widest transition-all duration-500 ${
+              isScrolled
+                ? "bg-rg-slate text-white hover:bg-rg-gold"
+                : "border border-white/40 text-white hover:bg-rg-gold hover:border-rg-gold"
+            }`}
           >
             Contact
           </a>
@@ -79,7 +97,9 @@ export function Navigation() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="lg:hidden relative z-50 text-rg-slate"
+          className={`lg:hidden relative z-50 transition-colors ${
+            isScrolled ? "text-rg-slate" : "text-white"
+          }`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -113,6 +133,15 @@ export function Navigation() {
         >
           Corporate
         </Link>
+        <a
+          href="https://wa.me/919488149966"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setMobileMenuOpen(false)}
+          className="mt-4 text-lg font-bold bg-rg-gold text-white px-8 py-4 uppercase tracking-widest transition-colors"
+        >
+          Contact Us
+        </a>
       </div>
     </header>
   );

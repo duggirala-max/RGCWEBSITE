@@ -41,3 +41,32 @@ html.lenis {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+/* Hero Ken Burns zoom effect */
+@keyframes kenburns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.hero-kenburns {
+  animation: kenburns 20s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Scroll indicator line animation */
+@keyframes scrollLine {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scroll-line-animation {
+  animation: scrollLine 1.5s ease-in-out infinite;
+}

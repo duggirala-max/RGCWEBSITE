@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion, Variants } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, Variants, AnimatePresence } from "framer-motion";
 import {
   CheckCircle2,
   MapPin,
@@ -14,10 +15,34 @@ import {
   Users,
   Dumbbell,
   Trophy,
-  Battery
+  Battery,
+  X
 } from "lucide-react";
 
 export default function EuphoriaProjectPage() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedBhk, setSelectedBhk] = useState<"2" | "3">("2");
+  const [selectedFacing, setSelectedFacing] = useState<"East" | "West">("East");
+  const [activeSection, setActiveSection] = useState("overview");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["overview", "configuration", "amenities", "specifications", "location"];
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
@@ -40,7 +65,7 @@ export default function EuphoriaProjectPage() {
     { category: "Main Door", description: "Teak wood frame & designed shutters with melamine Polish. Aesthetically designed with good quality hardware." },
     { category: "Internal Doors", description: "Teak/Engineered wood door frame and good quality flush shutter." },
     { category: "Windows", description: "UPVC or Aluminum openable / Sliding windows with glass & safety grills." },
-    { category: "Flooring", description: "Vitrified Tiles (24x24 or 800x1600 mm) by Johnson/RAK/Somany in living areas. Anti-skid ceramic tiles in balconies & toilets." },
+    { category: "Flooring", description: "Vitrified Tiles ( 2 x 2 or 2 x 4 ) by Johnson/RAK/Somany in living areas. Anti-skid ceramic tiles in balconies & toilets." },
     { category: "Corridors", description: "Granite / Marble flooring with SS hand Railing." },
     { category: "Kitchen", description: "Polished Granite Slab with Stainless Steel Sink. Provision for water purifier." },
     { category: "Sanitary Ware", description: "EWC's & Wash basin by Cera / Hindware / Parryware or Equivalent." },
@@ -53,11 +78,48 @@ export default function EuphoriaProjectPage() {
     "5 minutes to AP Police Head Quarters.",
     "1 minute (500 m) to NH16 Guntur Vijayawada Expressway.",
     "20 minutes (14 Km) to Vijayawada Bus Stand and Rail Station.",
-    "Very Close to Universities Like VIT, SRM, KLU and ANU.",
+    "Very Close to Universities Like VIT, SRM, AMRITA, KLU and ANU.",
+  ];
+
+  const openFloorPlan = (bhk: "2" | "3") => {
+    setSelectedBhk(bhk);
+    setSelectedFacing("East");
+    setModalOpen(true);
+  };
+
+  const navLinks = [
+    { id: "overview", label: "Overview" },
+    { id: "configuration", label: "Configuration" },
+    { id: "amenities", label: "Highlights" },
+    { id: "specifications", label: "Specs" },
+    { id: "location", label: "Location" },
   ];
 
   return (
     <main className="w-full min-h-screen bg-rg-light pb-24">
+      {/* Floating Enquire Button (Desktop) */}
+      <a 
+        href="https://wa.me/919488149966"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed top-1/3 right-0 z-50 bg-rg-gold text-white py-4 px-2 hover:bg-rg-slate transition-colors shadow-lg hidden md:block"
+        style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+      >
+        <span className="font-bold tracking-widest uppercase text-sm">Download Brochure</span>
+      </a>
+
+      {/* Mobile Fixed Bottom Contact Button */}
+      <div className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-rg-gold shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
+        <a 
+          href="https://wa.me/919488149966"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full text-center text-white py-5 font-bold tracking-widest uppercase text-sm"
+        >
+          Download Brochure
+        </a>
+      </div>
+
       {/* 1. Hero Section */}
       <section className="relative w-full h-[80vh] flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
@@ -75,32 +137,46 @@ export default function EuphoriaProjectPage() {
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="text-6xl md:text-8xl font-bold text-white mb-6 tracking-wide"
+            className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-serif text-white uppercase mb-4 leading-tight tracking-wide drop-shadow-2xl"
           >
-            EUPHORIA
+            Euphoria
           </motion.h1>
           <motion.p
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="text-xl md:text-3xl text-rg-gold uppercase tracking-widest mb-10"
+            className="text-sm md:text-xl text-rg-gold font-medium uppercase tracking-[0.3em] mb-10 drop-shadow-md"
           >
-            Mangalagiri, Defined.
+            Mangalagiri, Gateway to Amaravati
           </motion.p>
-            <a
-              href="https://wa.me/919488149966"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-rg-gold text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-white hover:text-rg-slate transition-colors"
-            >
-              Contact Us
-            </a>
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      {/* Sticky Sub-Navigation */}
+      <div className="sticky top-[72px] lg:top-[88px] z-40 w-full bg-white border-b border-rg-slate/10 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <ul className="flex items-center lg:justify-center gap-8 py-4 overflow-x-auto whitespace-nowrap [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            {navLinks.map((link) => (
+              <li key={link.id}>
+                <button 
+                  onClick={() => {
+                    document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className={`text-sm font-bold uppercase tracking-widest transition-colors ${
+                    activeSection === link.id ? "text-rg-gold" : "text-rg-slate/60 hover:text-rg-slate"
+                  }`}
+                >
+                  {link.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 mt-12">
         {/* 2. About Section */}
-        <section className="py-24 border-b border-rg-slate/10">
+        <section id="overview" className="py-24 border-b border-rg-slate/10 scroll-mt-32">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -109,7 +185,7 @@ export default function EuphoriaProjectPage() {
             className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
           >
             <div>
-              <span className="text-rg-gold tracking-widest uppercase text-sm font-bold mb-4 block">About The Project</span>
+              <span className="text-rg-gold tracking-widest uppercase text-sm font-bold mb-4 block">Overview</span>
               <h2 className="text-4xl lg:text-5xl text-rg-slate mb-6">A Private Reserve.</h2>
               <p className="text-lg text-rg-slate/70 leading-relaxed mb-6">
                 Euphoria is a collection of <strong>116 private residences</strong> in Kondapaneni Township. Designed strictly for privacy and space, it provides a quiet retreat within the city limits.
@@ -130,7 +206,7 @@ export default function EuphoriaProjectPage() {
         </section>
 
         {/* 3. Configurations / Floor Plans */}
-        <section className="py-24 border-b border-rg-slate/10">
+        <section id="configuration" className="py-24 border-b border-rg-slate/10 scroll-mt-32">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -139,7 +215,7 @@ export default function EuphoriaProjectPage() {
             className="text-center mb-16"
           >
             <span className="text-rg-gold tracking-widest uppercase text-sm font-bold mb-4 block">Floor Plans</span>
-            <h2 className="text-4xl lg:text-5xl text-rg-slate">Stunning Configurations</h2>
+            <h2 className="text-4xl lg:text-5xl text-rg-slate">Configurations</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -149,13 +225,13 @@ export default function EuphoriaProjectPage() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              className="bg-white border border-rg-slate/10 overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+              className="bg-white border border-rg-slate/10 overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col"
             >
-              <div className="p-8 lg:p-12">
+              <div className="p-8 lg:p-12 flex-1">
                 <div className="flex justify-between items-end mb-6">
                   <div>
                     <h3 className="text-3xl text-rg-slate">3 BHK</h3>
-                    <p className="text-rg-slate/60 uppercase tracking-widest text-sm mt-1">Nearing Possession</p>
+                    <p className="text-rg-slate/60 uppercase tracking-widest text-sm mt-1">Premium Residences</p>
                   </div>
                   <div className="text-right">
                     <p className="text-4xl text-rg-gold">1939</p>
@@ -173,15 +249,13 @@ export default function EuphoriaProjectPage() {
                   </div>
                 </div>
                 <p className="text-rg-slate/80">Available in East & West Facing configurations.</p>
-                <a 
-                  href="https://wa.me/919488149966"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-center w-full mt-8 bg-rg-slate text-white py-4 uppercase tracking-widest text-sm font-bold hover:bg-rg-gold transition-colors"
-                >
-                  Enquire Now
-                </a>
               </div>
+              <button 
+                onClick={() => openFloorPlan("3")}
+                className="w-full bg-rg-slate text-white py-6 uppercase tracking-widest text-sm font-bold hover:bg-rg-gold transition-colors mt-auto"
+              >
+                View Floor Plan
+              </button>
             </motion.div>
 
             {/* 2 BHK Card */}
@@ -190,13 +264,13 @@ export default function EuphoriaProjectPage() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              className="bg-white border border-rg-slate/10 overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+              className="bg-white border border-rg-slate/10 overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col"
             >
-              <div className="p-8 lg:p-12">
+              <div className="p-8 lg:p-12 flex-1">
                 <div className="flex justify-between items-end mb-6">
                   <div>
                     <h3 className="text-3xl text-rg-slate">2 BHK</h3>
-                    <p className="text-rg-slate/60 uppercase tracking-widest text-sm mt-1">Nearing Possession</p>
+                    <p className="text-rg-slate/60 uppercase tracking-widest text-sm mt-1">Premium Residences</p>
                   </div>
                   <div className="text-right">
                     <p className="text-4xl text-rg-gold">1368</p>
@@ -214,21 +288,19 @@ export default function EuphoriaProjectPage() {
                   </div>
                 </div>
                 <p className="text-rg-slate/80">Available in East & West Facing configurations.</p>
-                <a 
-                  href="https://wa.me/919488149966"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-center w-full mt-8 bg-rg-slate text-white py-4 uppercase tracking-widest text-sm font-bold hover:bg-rg-gold transition-colors"
-                >
-                  Enquire Now
-                </a>
               </div>
+              <button 
+                onClick={() => openFloorPlan("2")}
+                className="w-full bg-rg-slate text-white py-6 uppercase tracking-widest text-sm font-bold hover:bg-rg-gold transition-colors mt-auto"
+              >
+                View Floor Plan
+              </button>
             </motion.div>
           </div>
         </section>
 
         {/* 4. Amenities */}
-        <section className="py-24 border-b border-rg-slate/10">
+        <section id="amenities" className="py-24 border-b border-rg-slate/10 scroll-mt-32">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -236,7 +308,7 @@ export default function EuphoriaProjectPage() {
             variants={fadeInUp}
             className="text-center mb-16"
           >
-            <span className="text-rg-gold tracking-widest uppercase text-sm font-bold mb-4 block">The Amenities</span>
+            <span className="text-rg-gold tracking-widest uppercase text-sm font-bold mb-4 block">Highlights</span>
             <h2 className="text-4xl lg:text-5xl text-rg-slate">Designed for Leisure</h2>
           </motion.div>
 
@@ -263,7 +335,7 @@ export default function EuphoriaProjectPage() {
         </section>
 
         {/* 5. Specifications */}
-        <section className="py-24 border-b border-rg-slate/10">
+        <section id="specifications" className="py-24 border-b border-rg-slate/10 scroll-mt-32">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -296,7 +368,7 @@ export default function EuphoriaProjectPage() {
         </section>
 
         {/* 6. Location Highlights */}
-        <section className="py-24">
+        <section id="location" className="py-24 scroll-mt-32">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -335,8 +407,64 @@ export default function EuphoriaProjectPage() {
             </div>
           </motion.div>
         </section>
-
       </div>
+
+      {/* Floor Plan Modal */}
+      <AnimatePresence>
+        {modalOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm"
+          >
+            <motion.div 
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="bg-rg-slate w-full max-w-5xl max-h-[90vh] flex flex-col rounded-sm overflow-hidden shadow-2xl border border-white/10"
+            >
+              {/* Modal Header */}
+              <div className="flex justify-between items-center p-6 border-b border-white/10">
+                <h3 className="text-2xl text-white font-bold">{selectedBhk} BHK Floor Plan</h3>
+                <button onClick={() => setModalOpen(false)} className="text-white/70 hover:text-white transition-colors">
+                  <X className="w-8 h-8" />
+                </button>
+              </div>
+              
+              {/* Modal Content */}
+              <div className="flex-1 overflow-auto p-6 bg-black">
+                {/* Toggles */}
+                <div className="flex justify-center gap-4 mb-8">
+                  <button 
+                    onClick={() => setSelectedFacing("East")}
+                    className={`px-8 py-3 text-sm font-bold uppercase tracking-widest transition-colors ${selectedFacing === "East" ? "bg-rg-gold text-white" : "border border-white/20 text-white/70 hover:text-white"}`}
+                  >
+                    East Facing
+                  </button>
+                  <button 
+                    onClick={() => setSelectedFacing("West")}
+                    className={`px-8 py-3 text-sm font-bold uppercase tracking-widest transition-colors ${selectedFacing === "West" ? "bg-rg-gold text-white" : "border border-white/20 text-white/70 hover:text-white"}`}
+                  >
+                    West Facing
+                  </button>
+                </div>
+
+                {/* Floor Plan Image Viewer */}
+                <div className="relative w-full aspect-square md:aspect-video bg-white/5 rounded-sm border border-white/10 flex items-center justify-center p-4">
+                  <Image 
+                    src={`/${selectedFacing} Facing floor plan ${selectedBhk}BHK.jpg`} 
+                    alt={`${selectedFacing} Facing ${selectedBhk} BHK Floor Plan`}
+                    fill
+                    className="object-contain p-4"
+                  />
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
     </main>
   );
 }
