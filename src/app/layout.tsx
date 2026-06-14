@@ -3,6 +3,7 @@ import { Inter, Cinzel } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { Navigation } from "@/components/Navigation";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -58,6 +59,7 @@ export default function RootLayout({
           {/* Navigation injected here */}
           <Navigation />
           {children}
+          <WhatsAppButton />
         </SmoothScrollProvider>
       </body>
     </html>
