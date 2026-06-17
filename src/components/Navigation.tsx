@@ -4,10 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { ContactModal } from "./ContactModal";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,18 +83,16 @@ export function Navigation() {
           >
             Corporate
           </Link>
-          <a
-            href="https://wa.me/919488149966"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`text-sm font-bold px-6 py-3 uppercase tracking-widest transition-all duration-500 ${
+          <button
+            onClick={() => setContactModalOpen(true)}
+            className={`text-sm font-bold px-6 py-3 uppercase tracking-widest transition-all duration-500 cursor-pointer ${
               isScrolled
                 ? "bg-rg-slate text-white hover:bg-rg-gold"
                 : "border border-white/40 text-white hover:bg-rg-gold hover:border-rg-gold"
             }`}
           >
             Contact
-          </a>
+          </button>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -133,16 +133,22 @@ export function Navigation() {
         >
           Corporate
         </Link>
-        <a
-          href="https://wa.me/919488149966"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => setMobileMenuOpen(false)}
-          className="mt-4 text-lg font-bold bg-rg-gold text-white px-8 py-4 uppercase tracking-widest transition-colors"
+        <button
+          onClick={() => {
+            setMobileMenuOpen(false);
+            setContactModalOpen(true);
+          }}
+          className="mt-4 text-lg font-bold bg-rg-gold text-white px-8 py-4 uppercase tracking-widest transition-colors cursor-pointer"
         >
           Contact Us
-        </a>
+        </button>
       </div>
+
+      {/* Contact Details Modal */}
+      <ContactModal
+        isOpen={contactModalOpen}
+        onClose={() => setContactModalOpen(false)}
+      />
     </header>
   );
 }
