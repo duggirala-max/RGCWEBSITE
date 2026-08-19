@@ -93,10 +93,57 @@ export default function EuphoriaProjectPage() {
     { id: "amenities", label: "Highlights" },
     { id: "specifications", label: "Specs" },
     { id: "location", label: "Location" },
+    { id: "faq", label: "FAQ" },
   ];
 
   return (
     <main className="w-full min-h-screen bg-rg-light pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "ApartmentComplex",
+                "name": "Euphoria by R.G Constructions",
+                "description": "Premium 2 and 3 BHK luxury apartments located in Kondapaneni Township.",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Mangalagiri",
+                  "addressRegion": "Amaravati",
+                  "addressCountry": "IN"
+                },
+                "brand": {
+                  "@type": "Brand",
+                  "name": "R.G Constructions"
+                }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Where is the Euphoria project located?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Euphoria is strategically located in Kondapaneni Township, Mangalagiri, offering quick access to the Amaravati capital region, AP Police Headquarters, and NH16 Expressway."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Who is the builder of the Euphoria project?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Euphoria is developed by R.G Constructions, a trusted real estate developer in India with over four decades of engineering experience."
+                    }
+                  }
+                ]
+              }
+            ]
+          })
+        }}
+      />
       {/* Floating Enquire Button (Desktop) */}
       <a 
         href="https://wa.me/919488149966"
@@ -125,7 +172,7 @@ export default function EuphoriaProjectPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/assets/project_image_2.jpeg"
-            alt="Euphoria Project Hero"
+            alt="Euphoria Luxury Apartments by R.G Constructions in Mangalagiri, Amaravati"
             fill
             className="object-cover object-center"
             priority
@@ -188,10 +235,10 @@ export default function EuphoriaProjectPage() {
               <span className="text-rg-gold tracking-widest uppercase text-sm font-bold mb-4 block">Overview</span>
               <h2 className="text-4xl lg:text-5xl text-rg-slate mb-6">A Private Reserve.</h2>
               <p className="text-lg text-rg-slate/70 leading-relaxed mb-6">
-                Euphoria is a collection of <strong>116 private residences</strong> in Kondapaneni Township. Designed strictly for privacy and space, it provides a quiet retreat within the city limits.
+                Euphoria by R.G Constructions is a collection of <strong>116 premium private residences</strong> situated in the emerging Kondapaneni Township, Mangalagiri. Designed strictly for privacy and space, it provides a quiet luxury retreat.
               </p>
               <p className="text-lg text-rg-slate/70 leading-relaxed">
-                Situated just off the NH16 Expressway, Euphoria provides immediate access to the capital district while maintaining strict perimeter privacy.
+                Located just off the NH16 Expressway, Euphoria provides immediate access to the Amaravati capital region while maintaining strict perimeter privacy.
               </p>
             </div>
             <div className="relative aspect-[4/3] w-full">
@@ -406,6 +453,48 @@ export default function EuphoriaProjectPage() {
               ))}
             </div>
           </motion.div>
+        </section>
+
+        {/* 7. FAQ Section */}
+        <section id="faq" className="py-24 border-t border-rg-slate/10 scroll-mt-32">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeInUp}
+            className="mb-16 text-center"
+          >
+            <span className="text-rg-gold tracking-widest uppercase text-sm font-bold mb-4 block">Common Questions</span>
+            <h2 className="text-4xl lg:text-5xl text-rg-slate">Frequently Asked Questions</h2>
+          </motion.div>
+
+          <div className="max-w-3xl mx-auto space-y-8">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="bg-white p-8 border border-rg-slate/10 shadow-sm"
+            >
+              <h4 className="font-bold text-rg-slate text-xl mb-4">Where is the Euphoria project located?</h4>
+              <p className="text-rg-slate/70 leading-relaxed">
+                Euphoria is strategically located in Kondapaneni Township, Mangalagiri, offering quick access to the Amaravati capital region, AP Police Headquarters, and the NH16 Expressway.
+              </p>
+            </motion.div>
+            
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="bg-white p-8 border border-rg-slate/10 shadow-sm"
+            >
+              <h4 className="font-bold text-rg-slate text-xl mb-4">Who is the builder of the Euphoria project?</h4>
+              <p className="text-rg-slate/70 leading-relaxed">
+                Euphoria is developed by R.G Constructions, a trusted real estate developer in India with over four decades of premium engineering and execution experience.
+              </p>
+            </motion.div>
+          </div>
         </section>
       </div>
 
