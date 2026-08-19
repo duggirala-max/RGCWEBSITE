@@ -15,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: 'https://rgconstructions.in/Euphoria',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: 'https://rgconstructions.in/corporate',
       lastModified: new Date(),
       changeFrequency: 'monthly',

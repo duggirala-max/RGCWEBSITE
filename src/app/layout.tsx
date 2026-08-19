@@ -22,8 +22,21 @@ export const metadata: Metadata = {
     template: "%s | R.G Constructions",
   },
   description:
-    "Leading developers of high-end residential, commercial, and master-planned communities across India. Over four decades of trusted engineering and execution.",
-  keywords: ["luxury real estate", "commercial property", "R.G Constructions", "RG Constructions", "premium development India", "townships", "property investment"],
+    "Leading developers of high-end residential, commercial, and master-planned communities across India. Discover Euphoria near Mangalagiri and Amaravati with 4+ decades of trusted engineering.",
+  keywords: [
+    "luxury real estate",
+    "commercial property",
+    "R.G Constructions",
+    "RG Constructions",
+    "premium development India",
+    "townships",
+    "property investment",
+    "Euphoria Amaravati",
+    "Euphoria Mangalagiri",
+    "Euphoria R.G Constructions",
+    "luxury apartments Mangalagiri",
+    "flats in Amaravati"
+  ],
   robots: "index, follow",
   openGraph: {
     type: "website",
