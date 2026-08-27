@@ -66,8 +66,8 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   </h3>
                   <p className="text-base text-rg-slate leading-relaxed font-sans">
                     Road No. 6, Kondapaneni Township,<br />
-                    Vijayawada – Guntur Expressway NH5,<br />
-                    Mangalagiri – 522503
+                    Vijayawada – Guntur Expressway NH16,<br />
+                    Mangalagiri, Amaravati, Andhra Pradesh – 522503
                   </p>
                   <p className="text-xs text-rg-slate/60 leading-relaxed font-sans pt-1">
                     <span className="font-semibold text-rg-slate/85">Landmark:</span> Near Mangalagiri – Tenali Flyover | Next to BP Petrol Bunk
@@ -77,7 +77,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
               <div className="grid grid-cols-1 gap-3 pt-4 sm:grid-cols-2">
                 <a
-                  href="https://www.google.com/maps/dir/?api=1&destination=R.G.+CONSTRUCTIONS%2C+Kondapaneni+Township%2C+Vijayawada+%E2%80%93+Guntur+Expressway+NH5%2C+Mangalagiri+%E2%80%93+522503"
+                  href="https://www.google.com/maps/dir/?api=1&destination=R.G.+CONSTRUCTIONS%2C+Kondapaneni+Township%2C+Vijayawada+%E2%80%93+Guntur+Expressway+NH16%2C+Mangalagiri%2C+Amaravati%2C+Andhra+Pradesh+%E2%80%93+522503"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center px-4 py-3.5 border border-rg-gold text-rg-gold hover:bg-rg-gold hover:text-white font-semibold text-xs uppercase tracking-widest transition-all duration-300 cursor-pointer"
