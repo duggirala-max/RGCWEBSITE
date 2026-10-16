@@ -19,6 +19,35 @@ import {
   X
 } from "lucide-react";
 
+/*import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    absolute:
+      "Luxury Apartments in Mangalagiri & Amaravati - R.G Constructions",
+  },
+  description:
+    "Discover luxury apartments in Mangalagiri & Amaravati by RG Constructions, offering modern designs, premium amenities, and comfortable living spaces.",
+  keywords: [
+    "2 & 3 bhk apartments in amaravati",
+    "2 bhk apartments in amaravati",
+    "3 bhk apartments in amaravati",
+    "2 bhk flats in amaravati",
+    "3 bhk flats in amaravati",
+    "luxury 2 bhk flats in amaravati",
+    "luxury 3 bhk flats in amaravati",
+    "luxury 2 bhk apartments in amaravati",
+    "luxury 3 bhk apartments in amaravati",
+    "premium luxury apartments in amaravati",
+    "best luxury apartments in amaravati",
+    "high rise apartments in amaravati",
+    "best residential apartments in amaravati",
+    "gated communities in amaravati",
+    "premium 2 & 3 bhk apartments in amaravati",
+    "best luxury flats in amaravati",
+  ],
+};*/
+
 export default function EuphoriaProjectPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedBhk, setSelectedBhk] = useState<"2" | "3">("2");
@@ -172,7 +201,7 @@ export default function EuphoriaProjectPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/assets/project_image_2.jpeg"
-            alt="Euphoria Luxury Apartments by R.G Constructions in Mangalagiri, Amaravati"
+            alt="2 & 3 bhk apartments in amaravati"
             fill
             className="object-cover object-center"
             priority
@@ -244,7 +273,7 @@ export default function EuphoriaProjectPage() {
             <div className="relative aspect-[4/3] w-full">
               <Image
                 src="/assets/project_image_2.jpeg"
-                alt="Euphoria Project View"
+                alt="2 bhk apartments in amaravati"
                 fill
                 className="object-cover object-center rounded-sm shadow-xl"
               />
@@ -543,7 +572,7 @@ export default function EuphoriaProjectPage() {
                 <div className="relative w-full aspect-square md:aspect-video bg-white/5 rounded-sm border border-white/10 flex items-center justify-center p-4">
                   <Image 
                     src={`/${selectedFacing} Facing floor plan ${selectedBhk}BHK.jpg`} 
-                    alt={`${selectedFacing} Facing ${selectedBhk} BHK Floor Plan`}
+                    alt={`{${selectedFacing} Facing ${selectedBhk} BHK Floor Plan}`}
                     fill
                     className="object-contain p-4"
                   />
