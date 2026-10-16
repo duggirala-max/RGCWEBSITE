@@ -2,10 +2,33 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Corporate | Investor Relations",
-  description: "Corporate credentials, ESG reports, and commercial joint venture opportunities for RG Constructions.",
-};
+import type { Metadata } from "next";
+
+/*export const metadata: Metadata = {
+  title: {
+    absolute: "Corporate | Investor Relations | R.G Constructions",
+  },
+  description:
+    "RG Constructions provides corporate updates and investor relations information, promoting transparency, stakeholder engagement, and real estate development.",
+  keywords: [
+    "2 & 3 bhk apartments in amaravati",
+    "2 bhk apartments in amaravati",
+    "3 bhk apartments in amaravati",
+    "2 bhk flats in amaravati",
+    "3 bhk flats in amaravati",
+    "luxury 2 bhk flats in amaravati",
+    "luxury 3 bhk flats in amaravati",
+    "luxury 2 bhk apartments in amaravati",
+    "luxury 3 bhk apartments in amaravati",
+    "premium luxury apartments in amaravati",
+    "best luxury apartments in amaravati",
+    "high rise apartments in amaravati",
+    "best residential apartments in amaravati",
+    "gated communities in amaravati",
+    "premium 2 & 3 bhk apartments in amaravati",
+    "best luxury flats in amaravati",
+  ],
+};*/
 
 export default function CorporatePage() {
   return (
