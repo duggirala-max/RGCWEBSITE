@@ -16,7 +16,7 @@ import "swiper/css/navigation";
 import type { Metadata } from "next";
 import HomeClient from "./HomeClient";
 
-/*export const metadata: Metadata = {
+export const metadata: Metadata = {
   title: {
     absolute: "2 & 3 bhk apartments in amaravati - RG Constructions",
   },
@@ -40,7 +40,7 @@ import HomeClient from "./HomeClient";
     "premium 2 & 3 bhk apartments in amaravati",
     "best luxury flats in amaravati",
   ],
-};*/
+};
 
 export default function Home() {
   const fadeInUp: Variants = {
