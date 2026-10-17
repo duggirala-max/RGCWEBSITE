@@ -14,7 +14,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import type { Metadata } from "next";
-import HomeClient from "./HomeClient";
 
 export const metadata: Metadata = {
   title: {
