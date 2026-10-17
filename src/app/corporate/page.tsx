@@ -2,9 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
-import type { Metadata } from "next";
 
-/*export const metadata: Metadata = {
+export const metadata: Metadata = {
   title: {
     absolute: "Corporate | Investor Relations | R.G Constructions",
   },
@@ -28,7 +27,7 @@ import type { Metadata } from "next";
     "premium 2 & 3 bhk apartments in amaravati",
     "best luxury flats in amaravati",
   ],
-};*/
+};
 
 export default function CorporatePage() {
   return (
