@@ -19,7 +19,7 @@ import {
   X
 } from "lucide-react";
 
-/*import type { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     "premium 2 & 3 bhk apartments in amaravati",
     "best luxury flats in amaravati",
   ],
-};*/
+};
 
 export default function EuphoriaProjectPage() {
   const [modalOpen, setModalOpen] = useState(false);
