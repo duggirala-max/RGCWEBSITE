@@ -41,7 +41,7 @@ export function Navigation() {
           <div className="relative h-16 w-24 lg:h-20 lg:w-32 transition-all duration-500">
             <Image
               src="/Logo-Transparent.png"
-              alt="RG Constructions Logo"
+              alt="2 bhk apartments in amaravati"
               fill
               className="object-contain object-left transition-opacity duration-500"
               sizes="(max-width: 768px) 96px, 128px"

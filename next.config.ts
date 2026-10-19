@@ -19,6 +19,10 @@ const nextConfig: NextConfig = {
         source: "/euphoria-landing/brochure.php",
         destination: "/api/brochure",
       },
+      {
+        source: "/.netlify/functions/enquiry",
+        destination: "/api/enquiry",
+      },
     ];
   },
 };

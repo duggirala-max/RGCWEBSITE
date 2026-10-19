@@ -13,34 +13,6 @@ import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: {
-    absolute: "2 & 3 bhk apartments in amaravati - RG Constructions",
-  },
-  description:
-    "Explore luxury 2 & 3 BHK apartments in Amaravati by RG Constructions, featuring modern designs, quality construction, and comfortable living spaces.",
-  keywords: [
-    "2 & 3 bhk apartments in amaravati",
-    "2 bhk apartments in amaravati",
-    "3 bhk apartments in amaravati",
-    "2 bhk flats in amaravati",
-    "3 bhk flats in amaravati",
-    "luxury 2 bhk flats in amaravati",
-    "luxury 3 bhk flats in amaravati",
-    "luxury 2 bhk apartments in amaravati",
-    "luxury 3 bhk apartments in amaravati",
-    "premium luxury apartments in amaravati",
-    "best luxury apartments in amaravati",
-    "high rise apartments in amaravati",
-    "best residential apartments in amaravati",
-    "gated communities in amaravati",
-    "premium 2 & 3 bhk apartments in amaravati",
-    "best luxury flats in amaravati",
-  ],
-};
-
 export default function Home() {
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 30 },

@@ -18,15 +18,12 @@ const cinzel = Cinzel({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rgconstructions.in"),
-
   title: {
     default: "R.G Constructions | Premium Real Estate & Commercial Development",
     template: "%s | R.G Constructions",
   },
-
   description:
     "Leading developers of high-end residential, commercial, and master-planned communities across India. Discover Euphoria near Mangalagiri and Amaravati with 4+ decades of trusted engineering.",
-
   keywords: [
     "luxury real estate",
     "commercial property",
@@ -40,26 +37,34 @@ export const metadata: Metadata = {
     "Euphoria R.G Constructions",
     "luxury apartments Mangalagiri",
     "flats in Amaravati",
+    "2 & 3 bhk apartments in amaravati",
+    "2 bhk apartments in amaravati",
+    "3 bhk apartments in amaravati",
+    "2 bhk flats in amaravati",
+    "3 bhk flats in amaravati",
+    "luxury 2 bhk flats in amaravati",
+    "luxury 3 bhk flats in amaravati",
+    "luxury 2 bhk apartments in amaravati",
+    "luxury 3 bhk apartments in amaravati",
+    "premium luxury apartments in amaravati",
+    "best luxury apartments in amaravati",
+    "high rise apartments in amaravati",
+    "best residential apartments in amaravati",
+    "gated communities in amaravati",
+    "premium 2 & 3 bhk apartments in amaravati",
+    "best luxury flats in amaravati"
   ],
-
-  robots: "index, follow",
-
-  // Google Search Console Verification
   verification: {
     google: "zwWQoi8Qh_MfmTXJqvV410BcaJcPcUPqbAlJEq7oxuY",
   },
-
+  robots: "index, follow",
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://rgconstructions.in",
     siteName: "R.G Constructions",
-
     title: "R.G Constructions | Premium Real Estate Development",
-
-    description:
-      "Leading developers of high-end residential and commercial communities across India.",
-
+    description: "Leading developers of high-end residential and commercial communities across India.",
     images: [
       {
         url: "/assets/project_image_2.jpeg",
@@ -112,7 +117,6 @@ export default function RootLayout({
           }}
         />
       </head>
-
       <body className="min-h-full flex flex-col bg-rg-light text-rg-slate selection:bg-rg-gold selection:text-white">
         {/* Google Tag Manager (noscript) */}
         <noscript>
@@ -127,15 +131,10 @@ export default function RootLayout({
             title="Google Tag Manager"
           />
         </noscript>
-
         <SmoothScrollProvider>
-          {/* Navigation */}
+          {/* Navigation injected here */}
           <Navigation />
-
-          {/* Page Content */}
           {children}
-
-          {/* WhatsApp Button */}
           <WhatsAppButton />
         </SmoothScrollProvider>
       </body>

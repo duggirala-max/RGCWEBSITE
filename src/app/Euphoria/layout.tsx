@@ -1,8 +1,29 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Euphoria by R.G Constructions | Luxury Apartments in Mangalagiri & Amaravati",
-  description: "Euphoria by R.G Constructions offers premium 2 and 3 BHK luxury apartments located in Kondapaneni Township, Mangalagiri. Situated near the Amaravati capital region.",
+  title: {
+    absolute: "Luxury Apartments in Mangalagiri & Amaravati - R.G Constructions",
+  },
+  description:
+    "Discover luxury apartments in Mangalagiri & Amaravati by RG Constructions, offering modern designs, premium amenities, and comfortable living spaces.",
+  keywords: [
+    "2 & 3 bhk apartments in amaravati",
+    "2 bhk apartments in amaravati",
+    "3 bhk apartments in amaravati",
+    "2 bhk flats in amaravati",
+    "3 bhk flats in amaravati",
+    "luxury 2 bhk flats in amaravati",
+    "luxury 3 bhk flats in amaravati",
+    "luxury 2 bhk apartments in amaravati",
+    "luxury 3 bhk apartments in amaravati",
+    "premium luxury apartments in amaravati",
+    "best luxury apartments in amaravati",
+    "high rise apartments in amaravati",
+    "best residential apartments in amaravati",
+    "gated communities in amaravati",
+    "premium 2 & 3 bhk apartments in amaravati",
+    "best luxury flats in amaravati",
+  ],
 };
 
 export default function EuphoriaLayout({
