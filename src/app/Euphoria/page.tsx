@@ -194,7 +194,7 @@ export default function EuphoriaProjectPage() {
             variants={fadeInUp}
             className="text-sm md:text-xl text-rg-gold font-medium uppercase tracking-[0.3em] mb-10 drop-shadow-md"
           >
-            Mangalagiri, Gateway to Amaravati
+            Kondapaneni Township, Mangalagiri <br> Gateway to Amaravati
           </motion.p>
         </div>
       </section>
