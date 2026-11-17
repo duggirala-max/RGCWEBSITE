@@ -194,7 +194,7 @@ export default function EuphoriaProjectPage() {
             variants={fadeInUp}
             className="text-sm md:text-xl text-rg-gold font-medium uppercase tracking-[0.3em] mb-10 drop-shadow-md"
           >
-            Kondapaneni Township, Mangalagiri <br> Gateway to Amaravati
+            Kondapaneni Township, Mangalagiri <br /> Gateway to Amaravati
           </motion.p>
         </div>
       </section>
@@ -235,7 +235,7 @@ export default function EuphoriaProjectPage() {
               <span className="text-rg-gold tracking-widest uppercase text-sm font-bold mb-4 block">Overview</span>
               <h2 className="text-4xl lg:text-5xl text-rg-slate mb-6">A Private Reserve.</h2>
               <p className="text-lg text-rg-slate/70 leading-relaxed mb-6">
-                Euphoria by R.G Constructions is a collection of <strong>116 premium private residences</strong> situated in the emerging Kondapaneni Township, Mangalagiri. Designed strictly for privacy and space, it provides a quiet luxury retreat.
+                Euphoria by R.G Constructions is a collection of <strong>116 premium private residences</strong> situated in the emerging Kondapaneni Township, Mangalagiri, Amaravati. Designed strictly for privacy and space, it provides a quiet luxury retreat.
               </p>
               <p className="text-lg text-rg-slate/70 leading-relaxed">
                 Located just off the NH16 Expressway, Euphoria provides immediate access to the Amaravati capital region while maintaining strict perimeter privacy.
@@ -430,7 +430,7 @@ export default function EuphoriaProjectPage() {
                 Nestled in the emerging Kondapaneni Township, Euphoria is strategically located offering quick access to major hubs, hospitals, and educational institutions.
               </p>
               <div className="bg-white p-6 border border-rg-slate/10 border-l-4 border-l-rg-gold">
-                <p className="font-bold text-rg-slate">Mangalagiri, Near Tenali Flyover</p>
+                <p className="font-bold text-rg-slate">Kondapaneni Township, Mangalagiri, Amaravati</p>
               </div>
             </div>
             
@@ -478,7 +478,7 @@ export default function EuphoriaProjectPage() {
             >
               <h4 className="font-bold text-rg-slate text-xl mb-4">Where is the Euphoria project located?</h4>
               <p className="text-rg-slate/70 leading-relaxed">
-                Euphoria is strategically located in Kondapaneni Township, Mangalagiri, offering quick access to the Amaravati capital region, AP Police Headquarters, and the NH16 Expressway.
+                Euphoria is strategically located in Kondapaneni Township, Mangalagiri, Amaravati, offering quick access to the Amaravati capital region, AP Police Headquarters, and the NH16 Expressway.
               </p>
             </motion.div>
             
